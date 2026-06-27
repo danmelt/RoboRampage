@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://da7lr7vlx8yto"]
+
+[ext_resource type="Script" uid="uid://x5ets6bk4kmo" path="res://Player/player.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://camtipll61uf7" path="res://Player/smooth_camera.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://cp1v5mhsqycd4" path="res://Player/crosshair.gd" id="3_btcbx"]
+[ext_resource type="PackedScene" uid="uid://r5ulvribg63i" path="res://Weapons/smg.tscn" id="3_gwnis"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kw568"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kw568"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1693488545 groups=["player"]]
+script = ExtResource("1_l8h54")
+jump_height = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1116499415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14631176, 0, 0)
+mesh = SubResource("CapsuleMesh_kw568")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2136026048]
+shape = SubResource("CapsuleShape3D_kw568")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1188075906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="SmoothCamera" type="Camera3D" parent="CameraPivot" unique_id=1555735558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+top_level = true
+script = ExtResource("2_4ntmi")
+
+[node name="SMG" parent="CameraPivot/SmoothCamera" unique_id=1901488111 instance=ExtResource("3_gwnis")]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1912809475]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Control" parent="CenterContainer" unique_id=661957441]
+layout_mode = 2
+script = ExtResource("3_btcbx")

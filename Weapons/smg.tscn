@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://r5ulvribg63i"]
+
+[ext_resource type="PackedScene" uid="uid://drwbj4ew42g33" path="res://Weapons/hit_scan_weapon.tscn" id="1_jdx0u"]
+[ext_resource type="PackedScene" uid="uid://b7eqxpbvrc21o" path="res://Weapons/SMG.glb" id="2_nclrg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c33wx"]
+emission_enabled = true
+emission = Color(0.6893777, 0.5448999, 0.019160852, 1)
+emission_energy_multiplier = 3.04
+
+[sub_resource type="Curve" id="Curve_nclrg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ku442"]
+curve = SubResource("Curve_nclrg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_23euh"]
+direction = Vector3(0, 0, -1)
+spread = 8.0
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ku442")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eelno"]
+albedo_color = Color(0.84705883, 0.7411765, 0.2901961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kw568"]
+material = SubResource("StandardMaterial3D_eelno")
+size = Vector3(0.05, 0.05, 0.05)
+
+[node name="SMG" unique_id=1901488111 node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_jdx0u")]
+weapon_mesh = NodePath("SMG")
+muzzle_flash = NodePath("MuzzleFlash")
+
+[node name="SMG" parent="." index="1" unique_id=341007739 instance=ExtResource("2_nclrg")]
+transform = Transform3D(0.5279843, -0.03692026, -0.027738057, 0.03697093, 0.52870893, 0, 0.027670488, -0.0019349089, 0.5292736, -0.245, -0.185, -0.24)
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="." index="3" unique_id=1399628201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, -0.17, -0.8)
+material_override = SubResource("StandardMaterial3D_c33wx")
+cast_shadow = 0
+emitting = false
+lifetime = 0.06999999999999999
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_23euh")
+draw_pass_1 = SubResource("BoxMesh_kw568")
