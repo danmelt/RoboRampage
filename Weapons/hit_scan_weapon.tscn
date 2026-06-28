@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://drwbj4ew42g33"]
 
 [ext_resource type="Script" uid="uid://dnm0x43yllbil" path="res://Weapons/hit_scan_weapon.gd" id="1_h0k0s"]
+[ext_resource type="PackedScene" uid="uid://bohgpp4okf21y" path="res://Weapons/sparks.tscn" id="2_mtwks"]
 
 [node name="HitScanWeapon" type="Node3D" unique_id=1901488111]
 script = ExtResource("1_h0k0s")
+sparks = ExtResource("2_mtwks")
 
 [node name="CoolDownTimer" type="Timer" parent="." unique_id=1117633771]
 one_shot = true
