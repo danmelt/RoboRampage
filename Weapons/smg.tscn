@@ -32,36 +32,38 @@ size = Vector3(0.05, 0.05, 0.05)
 
 [node name="SMG" unique_id=1901488111 node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_jdx0u")]
 weapon_mesh = NodePath("SMG")
+ammo_type = 1
 muzzle_flash = NodePath("MuzzleFlash")
+automatic = true
 
 [node name="SMG" parent="." index="1" unique_id=341007739 instance=ExtResource("2_nclrg")]
 transform = Transform3D(0.5279843, -0.03692026, -0.027738057, 0.03697093, 0.52870893, 0, 0.027670488, -0.0019349089, 0.5292736, -0.245, -0.185, -0.5)
 
-[node name="Suppressors_003" parent="SMG" index="0" unique_id=118189761]
+[node name="Suppressors_003" parent="SMG" index="0" unique_id=268646889]
 layers = 2
 
-[node name="Part_024" parent="SMG" index="1" unique_id=1754959182]
+[node name="Part_024" parent="SMG" index="1" unique_id=1867326546]
 layers = 2
 
-[node name="Rail_009" parent="SMG" index="2" unique_id=617452972]
+[node name="Rail_009" parent="SMG" index="2" unique_id=14615478]
 layers = 2
 
-[node name="Grip_017" parent="SMG" index="3" unique_id=292185705]
+[node name="Grip_017" parent="SMG" index="3" unique_id=212180168]
 layers = 2
 
-[node name="Charger_011" parent="SMG" index="4" unique_id=954311611]
+[node name="Charger_011" parent="SMG" index="4" unique_id=362085553]
 layers = 2
 
-[node name="Scope_016" parent="SMG" index="5" unique_id=1939459912]
+[node name="Scope_016" parent="SMG" index="5" unique_id=1016737711]
 layers = 2
 
-[node name="Part_029" parent="SMG" index="6" unique_id=678624451]
+[node name="Part_029" parent="SMG" index="6" unique_id=983112255]
 layers = 2
 
-[node name="Part_030" parent="SMG" index="7" unique_id=624345031]
+[node name="Part_030" parent="SMG" index="7" unique_id=1181438322]
 layers = 2
 
-[node name="Gun butt_012" parent="SMG" index="8" unique_id=767584841]
+[node name="Gun butt_012" parent="SMG" index="8" unique_id=1326796011]
 layers = 2
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="." index="3" unique_id=1399628201]

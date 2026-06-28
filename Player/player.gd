@@ -3,9 +3,15 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
 @onready var game_over_menu: Control = $GameOverMenu
+@onready var ammo_handler: AmmoHandler = %AmmoHandler
+@onready var smooth_camera: Camera3D = %SmoothCamera
+@onready var smooth_camera_fov := smooth_camera.fov
+@onready var weapon_camera: Camera3D = %WeaponCamera
+@onready var weapon_camera_fov := weapon_camera.fov
 
 @export var jump_height: float = 1.0
 @export var fall_multiplier: float = 2.5
+@export var aim_multiplier := 0.7
 
 const SPEED = 5.0
 
@@ -24,6 +30,23 @@ var hitpoints = max_hitpoints:
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("aim"):
+		smooth_camera.fov = lerp(
+			smooth_camera.fov, 
+			smooth_camera_fov * aim_multiplier, 
+			delta * 20.0)
+		weapon_camera.fov = lerp(
+			weapon_camera.fov,
+			weapon_camera_fov * aim_multiplier,
+			delta * 20.0
+			)
+	else:
+		smooth_camera.fov = lerp(smooth_camera.fov, smooth_camera_fov, delta * 30.0)
+		weapon_camera.fov = lerp(weapon_camera.fov, weapon_camera_fov, delta * 30.0)
+			
+		
 		
 func _physics_process(delta: float) -> void:
 	handle_camera_rotation()
@@ -44,6 +67,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if Input.is_action_pressed("aim"):
+			velocity.x *= aim_multiplier
+			velocity.z *= aim_multiplier
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -54,6 +80,9 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			mouse_motion = -event.relative * 0.010
+			if Input.is_action_pressed("aim"):
+				mouse_motion *= aim_multiplier
+
 	if event.is_action_pressed("ui_cancel"):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		

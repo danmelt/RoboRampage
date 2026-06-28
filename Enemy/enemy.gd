@@ -38,8 +38,8 @@ func _physics_process(delta: float) -> void:
 
 	if distance <= aggro_range:
 		provoked = true
-	else:
-		provoked = false
+	#else:
+		#provoked = false
 
 	if provoked:
 		if distance <= attack_range:
