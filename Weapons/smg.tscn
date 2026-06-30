@@ -39,31 +39,31 @@ automatic = true
 [node name="SMG" parent="." index="1" unique_id=341007739 instance=ExtResource("2_nclrg")]
 transform = Transform3D(0.5279843, -0.03692026, -0.027738057, 0.03697093, 0.52870893, 0, 0.027670488, -0.0019349089, 0.5292736, -0.245, -0.185, -0.5)
 
-[node name="Suppressors_003" parent="SMG" index="0" unique_id=268646889]
+[node name="Suppressors_003" parent="SMG" index="0" unique_id=118189761]
 layers = 2
 
-[node name="Part_024" parent="SMG" index="1" unique_id=1867326546]
+[node name="Part_024" parent="SMG" index="1" unique_id=1754959182]
 layers = 2
 
-[node name="Rail_009" parent="SMG" index="2" unique_id=14615478]
+[node name="Rail_009" parent="SMG" index="2" unique_id=617452972]
 layers = 2
 
-[node name="Grip_017" parent="SMG" index="3" unique_id=212180168]
+[node name="Grip_017" parent="SMG" index="3" unique_id=292185705]
 layers = 2
 
-[node name="Charger_011" parent="SMG" index="4" unique_id=362085553]
+[node name="Charger_011" parent="SMG" index="4" unique_id=954311611]
 layers = 2
 
-[node name="Scope_016" parent="SMG" index="5" unique_id=1016737711]
+[node name="Scope_016" parent="SMG" index="5" unique_id=1939459912]
 layers = 2
 
-[node name="Part_029" parent="SMG" index="6" unique_id=983112255]
+[node name="Part_029" parent="SMG" index="6" unique_id=678624451]
 layers = 2
 
-[node name="Part_030" parent="SMG" index="7" unique_id=1181438322]
+[node name="Part_030" parent="SMG" index="7" unique_id=624345031]
 layers = 2
 
-[node name="Gun butt_012" parent="SMG" index="8" unique_id=1326796011]
+[node name="Gun butt_012" parent="SMG" index="8" unique_id=767584841]
 layers = 2
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="." index="3" unique_id=1399628201]

@@ -7,12 +7,12 @@ class_name Enemy
 @export var max_hitpoints := 100
 @export var attack_range := 1.5
 @export var attack_damage := 20
+@export var aggro_range := 12
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 var player : CharacterBody3D
 var provoked := false
-var aggro_range := 12.0
+#var aggro_range := 12.0
 var hitpoints: int = max_hitpoints:
 	set(value):
 		hitpoints = value

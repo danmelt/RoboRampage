@@ -22,7 +22,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_vim/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_3d_cursor/plugin.cfg", "res://addons/godot_vim/plugin.cfg")
 
 [global_group]
 
@@ -93,3 +93,4 @@ aim={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/msaa_3d=2
