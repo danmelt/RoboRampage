@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dd8mnveo2cpcb"]
+
+[ext_resource type="PackedScene" uid="uid://cipykclyoockc" path="res://Enemy/scanning_enemy.tscn" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://da7lr7vlx8yto" path="res://Player/player.tscn" id="2_6uqi0"]
+[ext_resource type="Script" uid="uid://401xppm6vuhh" path="res://Enemy/test.gd" id="2_ppyta"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6uqi0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ppyta"]
+sky_material = SubResource("ProceduralSkyMaterial_6uqi0")
+
+[sub_resource type="Environment" id="Environment_ykrsh"]
+background_mode = 2
+sky = SubResource("Sky_ppyta")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_kw568"]
+
+[node name="Node3D" type="Node3D" unique_id=1642833723]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=742666704]
+environment = SubResource("Environment_ykrsh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1204894919]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ScanningEnemy" parent="." unique_id=1029023236 node_paths=PackedStringArray("player") instance=ExtResource("1_8uh7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -9.680095)
+script = ExtResource("2_ppyta")
+player = NodePath("../Player")
+move_speed = 3.0
+
+[node name="Player" parent="." unique_id=1693488545 instance=ExtResource("2_6uqi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1934001816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D" unique_id=1669534645]
+mesh = SubResource("BoxMesh_kw568")

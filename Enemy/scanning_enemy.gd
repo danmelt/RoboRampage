@@ -48,8 +48,7 @@ func _physics_process(delta: float) -> void:
 			#animation_player.play("attack")
 		
 	if direction:
-		var target_pos = player.global_transform.origin
-		look_at(target_pos, Vector3.UP, true)
+		ray_cast_3d.target_position = ray_cast_3d.to_local(player.global_position)
 		#ray_cast_3d.target_position= player.global_position * 1000
 		ray_cast_3d.target_position = (player.global_position - global_position).normalized() * 1000
 		#ray_cast_3d.set_target_position(player.global_position)

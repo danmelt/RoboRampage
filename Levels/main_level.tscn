@@ -40,6 +40,7 @@ environment = SubResource("Environment_6x3q2")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 
 [node name="Player" parent="." unique_id=1693488545 instance=ExtResource("2_k0okc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4789596, -48)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=477135476]
 navigation_mesh = SubResource("NavigationMesh_kw568")
@@ -223,8 +224,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5987674, -22.156242)
 [node name="BulletPickup2" parent="Pickups" unique_id=474685231 instance=ExtResource("2_6opdx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.430292, -0.011000633, 1.3052089)
 
-[node name="ScanningEnemy" parent="." unique_id=1029023236 instance=ExtResource("7_2clls")]
-transform = Transform3D(-0.018111236, 0, 0.99983597, 0, 1, 0, -0.99983597, 0, -0.018111236, -20, 3.478959, -46)
+[node name="ScanningEnemy" parent="." unique_id=1029023236 node_paths=PackedStringArray("player") instance=ExtResource("7_2clls")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -20, 3.478959, -46)
+player = NodePath("../Player")
 
 [editable path="NavigationRegion3D/LevelContents/Room1/Enemies/Enemy"]
 [editable path="NavigationRegion3D/LevelContents/Room1/Enemies/Enemy2"]

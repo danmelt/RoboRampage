@@ -4,8 +4,6 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2pb1h"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2pb1h"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px1sc"]
 albedo_color = Color(0.74532753, 0.10628987, 0.10210808, 1)
 
@@ -13,12 +11,14 @@ albedo_color = Color(0.74532753, 0.10628987, 0.10210808, 1)
 material = SubResource("StandardMaterial3D_px1sc")
 size = Vector3(0.5, 0.2, 0.3)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2pb1h"]
+
 [sub_resource type="Animation" id="Animation_2pb1h"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visor:position")
+tracks/0/path = NodePath("MeshInstance3D/Visor:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +30,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visor:scale")
+tracks/1/path = NodePath("MeshInstance3D/Visor:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,7 +42,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visor:mesh:material:albedo_color")
+tracks/2/path = NodePath("MeshInstance3D/Visor:mesh:material:albedo_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -58,7 +58,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visor:position")
+tracks/0/path = NodePath("MeshInstance3D/Visor:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -70,7 +70,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visor:scale")
+tracks/1/path = NodePath("MeshInstance3D/Visor:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,7 +82,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visor:mesh:material:albedo_color")
+tracks/2/path = NodePath("MeshInstance3D/Visor:mesh:material:albedo_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -118,15 +118,15 @@ script = ExtResource("1_2pb1h")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=582084389]
 mesh = SubResource("CapsuleMesh_2pb1h")
 
+[node name="Visor" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1888523751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.5)
+mesh = SubResource("BoxMesh_kw568")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1882784149]
 shape = SubResource("CapsuleShape3D_2pb1h")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1171740358]
 debug_enabled = true
-
-[node name="Visor" type="MeshInstance3D" parent="." unique_id=1888523751]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.5)
-mesh = SubResource("BoxMesh_kw568")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333824108]
 libraries/ = SubResource("AnimationLibrary_am0pq")
