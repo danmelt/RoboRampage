@@ -1,0 +1,5 @@
+[gd_resource type="CompressedTexture2D" format=3 uid="uid://bhunqhxqrxit0"]
+
+[resource]
+resource_name = "tiled_floor"
+load_path = "res://.godot/imported/tiled_floor.png-e96a25f7d5af9e1bfd5d140f28856b96.s3tc.ctex"

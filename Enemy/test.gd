@@ -1,11 +1,15 @@
 extends CharacterBody3D
+class_name Hunter
 
 @export var player: Node3D
 @export var move_speed: float = 3.0 # Speed at which the enemy chases
-@export var max_hitpoints := 100
+@export var max_hitpoints := 200
 @export var attack_range := 1.5
 @export var attack_damage := 20
 @export var aggro_range := 12
+@onready var ray_cast_3d: RayCast3D = $RayCast3D
+
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var raycast: RayCast3D = $RayCast3D
@@ -13,6 +17,13 @@ extends CharacterBody3D
 # Get the standard gravity from project settings
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var provoked := false
+
+var hitpoints: int = max_hitpoints:
+	set(value):
+		hitpoints = value
+		if hitpoints <= 0:
+			queue_free()
+		provoked = true
 
 func _physics_process(delta: float) -> void:
 	# 1. Apply gravity so the enemy stays on the floor
@@ -30,7 +41,7 @@ func _physics_process(delta: float) -> void:
 
 		if provoked:
 			if distance <= attack_range:
-				animation_player.play("attack")
+				animation_player.play("hunter_attack")
 	
 		# 3. Check for line of sight
 		if raycast.is_colliding() and raycast.get_collider() == player:

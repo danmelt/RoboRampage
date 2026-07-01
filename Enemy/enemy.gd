@@ -45,14 +45,14 @@ func _physics_process(delta: float) -> void:
 		if distance <= attack_range:
 			animation_player.play("attack")
 		
-	if direction:
+	if global_position.distance_to(next_position) > 0.1:
 		look_at_target(direction)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	move_and_slide()
 
 func look_at_target(direction: Vector3) -> void:

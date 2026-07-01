@@ -129,10 +129,17 @@ weapon1 = NodePath("Rifle")
 weapon2 = NodePath("SMG")
 
 [node name="Rifle" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=1901488111 node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_fhl08")]
+ammo_type = null
+automatic = null
 ammo_handler = NodePath("../../AmmoHandler")
+test_export = null
 
 [node name="SMG" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=1851275601 node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_gwnis")]
+fire_rate = null
+recoil = null
+weapon_damage = null
 ammo_handler = NodePath("../../AmmoHandler")
+test_export = null
 
 [node name="AmmoHandler" type="Node" parent="SubViewportContainer/SubViewport/WeaponCamera" unique_id=641017940 node_paths=PackedStringArray("ammo_label", "weapon_handler")]
 unique_name_in_owner = true

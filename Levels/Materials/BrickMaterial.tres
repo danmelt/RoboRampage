@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bi66s27odjgk3"]
+
+[ext_resource type="Texture2D" uid="uid://bekbgjiwm27pw" path="res://Levels/Materials/brick_tile.png" id="1_u6hkl"]
+
+[resource]
+albedo_texture = ExtResource("1_u6hkl")
+uv1_triplanar = true
+uv1_world_triplanar = true

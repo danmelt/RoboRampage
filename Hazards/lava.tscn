@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ijb8fnvmrfwo" path="res://Hazards/lava.gd" id="1_0ss8n"]
 [ext_resource type="Material" uid="uid://ck3fqkim2u3cs" path="res://Hazards/LavaMaterial.tres" id="1_gavgq"]
-[ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="2_sn006"]
-[ext_resource type="Script" uid="uid://dt04kfvdc21nb" path="res://addons/godot_3d_cursor/scripts/3d_cursor.gd" id="3_0ss8n"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_14me6"]
 size = Vector2(10, 10)
@@ -21,15 +19,5 @@ light_color = Color(1, 0.5019608, 0, 1)
 light_energy = 2.0
 shadow_enabled = true
 omni_attenuation = 0.1
-
-[node name="3DCursor" type="Marker3D" parent="." unique_id=655080697 groups=["Plugin3DCursor"] instance=ExtResource("2_sn006")]
-gizmo_extents = 0.0
-script = ExtResource("3_0ss8n")
-metadata/cursor_id = 0
-metadata/size_scale = 1.0
-metadata/show_title_label = true
-metadata/show_number_label = true
-metadata/scale_affect_labels = true
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

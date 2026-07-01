@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dj0wio08sdtx5"]
+
+[ext_resource type="Script" uid="uid://401xppm6vuhh" path="res://Enemy/test.gd" id="2_gpb2a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23euh"]
+albedo_color = Color(0.21463647, 0.6151027, 0.04455612, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kw568"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp6et"]
+albedo_color = Color(0.86788076, 0, 0.024107153, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_23euh"]
+size = Vector3(0.5, 0.3, 0.3)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kw568"]
+
+[sub_resource type="Animation" id="Animation_hp6et"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_grvbb"]
+resource_name = "hunter_attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, -0.3), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpb2a"]
+_data = {
+&"RESET": SubResource("Animation_hp6et"),
+&"hunter_attack": SubResource("Animation_grvbb")
+}
+
+[node name="Hunter" type="CharacterBody3D" unique_id=664574871]
+script = ExtResource("2_gpb2a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2106598757]
+material_override = SubResource("StandardMaterial3D_23euh")
+mesh = SubResource("CapsuleMesh_kw568")
+
+[node name="Visor" type="MeshInstance3D" parent="MeshInstance3D" unique_id=136978895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, -0.5)
+material_override = SubResource("StandardMaterial3D_hp6et")
+mesh = SubResource("BoxMesh_23euh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1891145742]
+shape = SubResource("CapsuleShape3D_kw568")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=444731512]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1753253576]
+libraries/ = SubResource("AnimationLibrary_gpb2a")
