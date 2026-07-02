@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://bv2r0hivdari3"]
 
 [ext_resource type="Material" uid="uid://cso7ictxmru07" path="res://Levels/Materials/GrayMaterial.tres" id="1_8xii8"]
-[ext_resource type="Material" uid="uid://bi66s27odjgk3" path="res://Levels/Materials/BrickMaterial.tres" id="2_2clls"]
+[ext_resource type="Texture2D" uid="uid://jhnr6lj63fk6" path="res://Levels/Materials/stone_wall.tres" id="2_2clls"]
 [ext_resource type="PackedScene" uid="uid://bl65ew8jvh4st" path="res://Pickups/bullet_pickup.tscn" id="2_6opdx"]
 [ext_resource type="PackedScene" uid="uid://da7lr7vlx8yto" path="res://Player/player.tscn" id="2_k0okc"]
 [ext_resource type="PackedScene" uid="uid://c01rfwtn4tnki" path="res://Enemy/enemy.tscn" id="6_k6a8t"]
 [ext_resource type="PackedScene" uid="uid://dwxgak887hfv4" path="res://Hazards/lava.tscn" id="6_wcg7u"]
 [ext_resource type="PackedScene" uid="uid://cqgxnfx7tfvua" path="res://Pickups/small_bullet_pickup.tscn" id="7_wcg7u"]
 [ext_resource type="PackedScene" uid="uid://dj0wio08sdtx5" path="res://Enemy/hunter.tscn" id="8_2clls"]
-[ext_resource type="PackedScene" uid="uid://dc0xc2atb5mix" path="res://Levels/blender_export.tscn" id="9_3d006"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8xii8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,7 +26,8 @@ vertices = PackedVector3Array(-24.818005, -1.0257773, -56.94764, -24.818005, -1.
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(14, 13, 12), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 15), PackedInt32Array(15, 16, 12), PackedInt32Array(12, 16, 14), PackedInt32Array(21, 20, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(28, 27, 26), PackedInt32Array(22, 23, 26), PackedInt32Array(26, 23, 28), PackedInt32Array(21, 19, 29), PackedInt32Array(29, 19, 24), PackedInt32Array(32, 15, 30), PackedInt32Array(30, 15, 31), PackedInt32Array(29, 24, 25), PackedInt32Array(15, 32, 18), PackedInt32Array(19, 20, 34), PackedInt32Array(34, 20, 36), PackedInt32Array(34, 36, 35), PackedInt32Array(35, 36, 33), PackedInt32Array(35, 33, 18), PackedInt32Array(33, 17, 18), PackedInt32Array(40, 39, 37), PackedInt32Array(37, 39, 38), PackedInt32Array(42, 41, 43), PackedInt32Array(43, 41, 44), PackedInt32Array(47, 46, 45), PackedInt32Array(48, 43, 44), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(48, 44, 53), PackedInt32Array(53, 44, 54), PackedInt32Array(56, 52, 55), PackedInt32Array(55, 52, 49), PackedInt32Array(57, 53, 54), PackedInt32Array(56, 55, 58), PackedInt32Array(58, 55, 59), PackedInt32Array(59, 55, 60), PackedInt32Array(59, 62, 58), PackedInt32Array(58, 62, 61), PackedInt32Array(57, 54, 45), PackedInt32Array(45, 54, 47), PackedInt32Array(47, 60, 46), PackedInt32Array(46, 60, 55), PackedInt32Array(66, 65, 63), PackedInt32Array(63, 65, 64), PackedInt32Array(69, 68, 67), PackedInt32Array(72, 71, 70), PackedInt32Array(62, 69, 61), PackedInt32Array(61, 69, 70), PackedInt32Array(74, 30, 73), PackedInt32Array(73, 30, 31), PackedInt32Array(73, 75, 74), PackedInt32Array(74, 75, 67), PackedInt32Array(67, 75, 69), PackedInt32Array(78, 72, 76), PackedInt32Array(76, 72, 77), PackedInt32Array(77, 72, 70), PackedInt32Array(76, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(75, 82, 69), PackedInt32Array(69, 82, 70), PackedInt32Array(70, 82, 77), PackedInt32Array(77, 82, 81), PackedInt32Array(83, 41, 42), PackedInt32Array(50, 51, 84), PackedInt32Array(83, 42, 84), PackedInt32Array(84, 42, 50), PackedInt32Array(90, 89, 85), PackedInt32Array(85, 89, 86), PackedInt32Array(86, 89, 88), PackedInt32Array(86, 88, 87), PackedInt32Array(92, 83, 91), PackedInt32Array(91, 83, 84), PackedInt32Array(87, 93, 86), PackedInt32Array(85, 92, 90), PackedInt32Array(90, 92, 91), PackedInt32Array(89, 94, 88), PackedInt32Array(96, 95, 80), PackedInt32Array(80, 95, 79), PackedInt32Array(99, 98, 97), PackedInt32Array(96, 99, 95), PackedInt32Array(95, 99, 100), PackedInt32Array(100, 99, 101), PackedInt32Array(101, 99, 97), PackedInt32Array(101, 102, 100)]
 agent_radius = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcg7u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b1du"]
+albedo_texture = ExtResource("2_2clls")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2clls"]
 points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
@@ -52,7 +52,6 @@ navigation_mesh = SubResource("NavigationMesh_kw568")
 
 [node name="Room1" type="CSGBox3D" parent="NavigationRegion3D/LevelContents" unique_id=1304492502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0.98899984, -0.259)
-material_override = ExtResource("2_2clls")
 use_collision = true
 flip_faces = true
 size = Vector3(8, 4, 8)
@@ -61,9 +60,9 @@ size = Vector3(8, 4, 8)
 
 [node name="Room2" type="CSGBox3D" parent="NavigationRegion3D/LevelContents/Room1/CSGCombiner3D" unique_id=1977011295]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.9)
-material_override = SubResource("StandardMaterial3D_wcg7u")
 flip_faces = true
 size = Vector3(8, 4, 8)
+material = SubResource("StandardMaterial3D_8b1du")
 
 [node name="Room3" type="CSGBox3D" parent="NavigationRegion3D/LevelContents/Room1/CSGCombiner3D" unique_id=275302072]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.34233, 0, 1.7881393e-07)
@@ -121,7 +120,7 @@ flip_faces = true
 size = Vector3(3.3876343, 3, 9.5917)
 
 [node name="CorridorX" type="CSGBox3D" parent="NavigationRegion3D/LevelContents/Room1/CSGCombiner3D" unique_id=410943799]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.310005, -0.5, -20.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -44.392338, -0.5, -17.134798)
 flip_faces = true
 size = Vector3(2, 3, 10)
 
@@ -236,8 +235,6 @@ transform = Transform3D(0.5000001, -1.4901161e-08, -0.8660254, -0.75, 0.5, -0.43
 
 [node name="Enemy8" parent="Enemies" unique_id=1627021920 instance=ExtResource("6_k6a8t")]
 transform = Transform3D(0.5000001, -1.4901161e-08, -0.8660254, -0.75, 0.5, -0.4330128, 0.43301266, 0.86602545, 0.25000003, 43.024826, -23.03733, 17.317766)
-
-[node name="BlenderExport" parent="." unique_id=252709330 instance=ExtResource("9_3d006")]
 
 [editable path="LavaPools/Lava"]
 [editable path="LavaPools/Lava2"]

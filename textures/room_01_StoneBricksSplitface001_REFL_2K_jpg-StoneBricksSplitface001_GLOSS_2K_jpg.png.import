@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bml4alhenjno8"
-path.s3tc="res://.godot/imported/tiled_floor.png-e96a25f7d5af9e1bfd5d140f28856b96.s3tc.ctex"
+uid="uid://c5j14fyby1uqs"
+path.s3tc="res://.godot/imported/room_01_StoneBricksSplitface001_REFL_2K_jpg-StoneBricksSplitface001_GLOSS_2K_jpg.png-b911064acb6938eea4c17e65abaf2a19.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f989e10ffdd238453268800dadc88822"
+}
 
 [deps]
 
-source_file="res://Levels/Materials/tiled_floor.png"
-dest_files=["res://.godot/imported/tiled_floor.png-e96a25f7d5af9e1bfd5d140f28856b96.s3tc.ctex"]
+source_file="res://textures/room_01_StoneBricksSplitface001_REFL_2K_jpg-StoneBricksSplitface001_GLOSS_2K_jpg.png"
+dest_files=["res://.godot/imported/room_01_StoneBricksSplitface001_REFL_2K_jpg-StoneBricksSplitface001_GLOSS_2K_jpg.png-b911064acb6938eea4c17e65abaf2a19.s3tc.ctex"]
 
 [params]
 
